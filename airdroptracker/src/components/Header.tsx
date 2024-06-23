@@ -22,7 +22,7 @@ function Navbar({ className }: { className?: string }) {
                 <Link className="text-lg font-extrabold text-black" href="/">Home</Link>
                 <Link className="text-lg font-extrabold text-black" href="/tasks">Tasks</Link>
                 <Link className="text-lg font-extrabold text-black" href="/airdrops">Airdrops</Link>
-                <Link className="text-lg font-extrabold text-black" href="/">Login</Link>
+                <Link className="text-lg font-extrabold text-black" href="/login">Login</Link>
 
             </Menu>
         </div>
