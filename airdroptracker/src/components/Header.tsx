@@ -22,9 +22,17 @@ export default function Header() {
                     <p className='pl-4 text-3xl font-medium'>Airdrop Tracker</p>
                 </div>
                 <div className='relative h-full w-[30%] border border-red-500'>
-                    <div className='absolute inset-0 w-[60%] h-[60%] m-auto' onClick={()=>setBurger(!isBurger)}>
-                        {isBurger ? <Image src={BurgerX} layout='fill' objectFit='cover' /> :
-                            <Image src={Burger} layout="fill" objectFit="cover" />}
+                    <div className='absolute inset-0 w-[60%] h-[60%] m-auto cursor-pointer'
+                        onClick={() => setBurger(!isBurger)}>
+                        {isBurger ?
+                            <div className={`transition-opacity duration-500 ${isBurger ? 'opacity-100' : 'opacity-0'}`}>
+                                <Image alt='cancel button' src={BurgerX} layout='fill' objectFit='cover' />
+                            </div>
+                            :
+                            <div className={`transition-opacity duration-500 absolute inset-0 ${isBurger ? 'opacity-0' : 'opacity-100'}`}>
+                                <Image alt='menu button' src={Burger} layout='fill' objectFit='cover' />
+                            </div>
+                        }
                     </div>
                 </div>
 
