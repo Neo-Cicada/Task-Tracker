@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Burger from '../../public/menu-burger-horizontal.svg'
 import BurgerX from '../../public/burgerX.svg'
 import Image from 'next/image'
+import MobileMenu from './mobile/MobileMenu';
 export default function Header() {
     const [isBurger, setBurger] = useState<boolean>(false);
 
@@ -38,7 +39,7 @@ export default function Header() {
 
 
             </div>
-
+            {isBurger && <MobileMenu isOpen={isBurger} onClose={()=>setBurger(!isBurger)}/>}
 
         </>
     )
