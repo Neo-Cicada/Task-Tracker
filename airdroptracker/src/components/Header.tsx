@@ -11,7 +11,7 @@ export default function Header() {
 
     return (
         <>
-            <div className='hidden md:border md:border-red-500 md:flex md:items-center md:justify-around md:w-full md:h-16'>
+            <div className='hidden md:border md:border-gray-600 md:flex md:items-center md:justify-around md:w-full md:h-16'>
                 <Link className="text-lg font-extrabold text-black" href="/">Home</Link>
                 <Link className="text-lg font-extrabold text-black" href="/tasks">Tasks</Link>
                 <Link className="text-lg font-extrabold text-black" href="/airdrops">Airdrops</Link>
