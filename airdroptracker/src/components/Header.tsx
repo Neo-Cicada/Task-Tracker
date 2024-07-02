@@ -6,16 +6,29 @@ import Burger from '../../public/menu-burger-horizontal.svg'
 import BurgerX from '../../public/burgerX.svg'
 import Image from 'next/image'
 import MobileMenu from './mobile/MobileMenu';
+import { usePathname } from 'next/navigation'
+
 export default function Header() {
     const [isBurger, setBurger] = useState<boolean>(false);
+    const pathname = usePathname()
 
     return (
         <>
-            <div className='hidden md:border md:border-gray-600 md:flex md:items-center md:justify-around md:w-full md:h-16'>
-                <Link className="text-lg font-extrabold text-black" href="/">Home</Link>
-                <Link className="text-lg font-extrabold text-black" href="/tasks">Tasks</Link>
-                <Link className="text-lg font-extrabold text-black" href="/airdrops">Airdrops</Link>
-                <Link className="text-lg font-extrabold text-black" href="/login">Login</Link>
+            <div className='hidden md:bg-gray-800 md:border md:border-gray-600 md:flex md:items-center md:justify-around md:w-full md:h-16'>
+                <Link className={`text-lg font-extrabold 
+                    ${pathname === '/' ? 'text-white' : 'text-gray-300'}`}
+                    href="/">
+                    Home
+                </Link>
+                <Link className={`text-lg font-extrabold 
+                    ${pathname === '/tasks' ? 'text-white' : 'text-gray-300'}`}
+                    href="tasks">
+                    Tasks</Link>
+                <Link className={`text-lg font-extrabold 
+                    ${pathname === '/airdrops' ? 'text-white' : 'text-gray-300'}`}
+                    href="airdrops">
+                    Airdrops</Link>
+                <Link className="text-lg font-extrabold text-gray-300" href="/login">Login</Link>
             </div>
 
             <div className='border border-red-500 h-[10vh] w-full flex md:hidden' >
@@ -39,7 +52,7 @@ export default function Header() {
 
 
             </div>
-            {isBurger && <MobileMenu isOpen={isBurger} onClose={()=>setBurger(!isBurger)}/>}
+            {isBurger && <MobileMenu isOpen={isBurger} onClose={() => setBurger(!isBurger)} />}
 
         </>
     )
