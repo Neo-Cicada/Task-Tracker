@@ -1,8 +1,11 @@
 'use client'
+import PopUp from '@/components/PopUp';
 import { useState } from 'react'
 import React from 'react'
 
-export default function tasks() {
+export default function Tasks() {
+  const [isPopUp, setPopUp] = useState<boolean>(false);
+
   const dummyData = [
     {
       "id": 1,
@@ -41,11 +44,11 @@ export default function tasks() {
         <div >
           <p>Projects</p>
         </div>
-        <button className='w-24 border border-gray-600 rounded-md'> Add task</button>
+        <button className='w-24 border border-gray-600 rounded-md' onClick={()=>setPopUp(!isPopUp)}> Add task</button>
       </div>
 
       {ComponentData}
-
+      <PopUp popUp={isPopUp} onClose={()=>setPopUp(false)}/>
     </div>
   )
 }
