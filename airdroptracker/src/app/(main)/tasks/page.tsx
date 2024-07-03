@@ -44,11 +44,15 @@ export default function Tasks() {
         <div >
           <p>Projects</p>
         </div>
-        <button className='w-24 border border-gray-600 rounded-md' onClick={()=>setPopUp(!isPopUp)}> Add task</button>
+        <button className='w-24 border border-gray-600 rounded-md' onClick={() => setPopUp(!isPopUp)}> Add task</button>
       </div>
 
       {ComponentData}
-      <PopUp popUp={isPopUp} onClose={()=>setPopUp(false)}/>
+      <PopUp popUp={isPopUp} onClose={() => setPopUp(false)}>
+        <div className='w-[90vh] h-[80vh] border border-red-500'>
+          wqeqwe
+        </div>
+      </PopUp >
     </div>
   )
 }
