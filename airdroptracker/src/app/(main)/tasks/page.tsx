@@ -1,4 +1,5 @@
 'use client'
+import AddTask from '@/components/AddTask';
 import PopUp from '@/components/PopUp';
 import { useState } from 'react'
 import React from 'react'
@@ -50,7 +51,7 @@ export default function Tasks() {
       {ComponentData}
       <PopUp popUp={isPopUp} onClose={() => setPopUp(false)}>
         <div className='w-[90vh] h-[80vh] border border-red-500'>
-          wqeqwe
+          <AddTask/>
         </div>
       </PopUp >
     </div>

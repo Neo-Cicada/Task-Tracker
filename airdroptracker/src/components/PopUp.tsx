@@ -43,7 +43,10 @@ const PopUp: React.FC<PopUpProps> = ({ popUp, onClose, children }) => {
       <div className='flex flex-col p-6 bg-white rounded-md' onClick={handleInsideClick}>
         {children}
         {/* Add form or content for the pop-up here */}
-        <button onClick={onClose}>Close</button>
+        <div className='flex items-center justify-between'>
+          <button onClick={onClose}>Close</button>
+          <button >Save</button>
+        </div>
       </div>
     </div>
   );
