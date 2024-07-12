@@ -1,12 +1,12 @@
 import Image from "next/image";
-
+import MetaVerse from "../../../public/metaverse.svg"
 export default function Home() {
   return (
     <>
       <main className="md:flex h-[90vh]">
         <div className="flex items-center justify-center border h-1/2 md:h-full md:w-1/2">
           <div className="border border-gray-600 w-[80%] h-[80%] rounded-md">
-            Intro to the website 
+            <Image src={MetaVerse} alt="metaverse"/>
           </div>
         </div>
         <div className="flex flex-col justify-center gap-10 p-12 border h-1/2 md:h-full md:w-1/2">
