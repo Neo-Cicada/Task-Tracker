@@ -40,7 +40,7 @@ export default function Tasks() {
     </div>
   </>)
   return (
-    <div className='flex flex-col h-[90vh] border border-gray-600 p-9 gap-4'>
+    <div className='flex flex-col h-[90vh] p-9 gap-4'>
       <div className='flex justify-between '>
         <div >
           <p>Projects</p>
