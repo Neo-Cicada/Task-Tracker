@@ -11,9 +11,9 @@ export default function Home() {
           </div>
         </div>
         <div className="flex flex-col justify-center gap-8 p-12 overflow-hidden">
-          <p className="text-3xl">Welcome to TaskChain!</p>
-          <p className="text-base">Discover the latest crypto airdrops and manage your tasks effortlessly. Stay informed and organized with TaskChain, where crypto and productivity meet.</p>
-          <p className="text-base">Where crypto airdrops meet seamless task management. Stay in the loop and on track effortlessly.
+          <p className="text-3xl font-extrabold">Welcome to TaskChain!</p>
+          <p className="text-base font-medium">Discover the latest crypto airdrops and manage your tasks effortlessly. Stay informed and organized with TaskChain, where crypto and productivity meet.</p>
+          <p className="text-base font-medium">Where crypto airdrops meet seamless task management. Stay in the loop and on track effortlessly.
           </p>
         </div>
       </main>

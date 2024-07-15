@@ -30,7 +30,7 @@ const config: Config = {
       addBase({
         'body': {
           backgroundColor: '#000000', // Black background
-          color: '#ffffff', // White text
+          color: '#DCDCDC', // White text
         },
       });
     },
