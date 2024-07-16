@@ -6,6 +6,8 @@ import React from 'react'
 
 export default function Tasks() {
   const [isPopUp, setPopUp] = useState<boolean>(false);
+  const [isInfo, setInfo] = useState<boolean>(false);
+  const [hoveredData, setHoveredData] = useState<any>("");
 
   const dummyData = [
     {
@@ -30,15 +32,20 @@ export default function Tasks() {
       "dateEnded": "2023-01-12T00:00:00.000Z"
     },
   ]
-  const ComponentData = dummyData.map(i => <>
-    <div className='flex items-center justify-between h-16 border border-gray-600 rounded-md cursor-pointer'>
-      <div>{i.name}</div>
+  const ComponentData = dummyData.map((item) => (
+    <div
+      key={item.id}
+      onClick={() => setInfo(!isInfo)}
+      onMouseEnter={() => setHoveredData(item)}
+      onMouseLeave={() => setHoveredData(null)}
+      className="flex items-center justify-between h-16 border border-gray-600 rounded-md cursor-pointer"
+    >
+      <div>{item.name}</div>
       <div>task</div>
-      <div>{i.dateStarted}</div>
-      <div>{i.dateEnded}</div>
-      <div></div>
+      <div>{item.dateStarted}</div>
+      <div>{item.dateEnded}</div>
     </div>
-  </>)
+  )); 
   return (
     <div className='flex flex-col h-[90vh] p-9 gap-4'>
       <div className='flex justify-between '>
@@ -49,9 +56,12 @@ export default function Tasks() {
       </div>
 
       {ComponentData}
+      <PopUp popUp={isInfo} onClose={() => setInfo(false)}>
+        {hoveredData && hoveredData.name}
+      </PopUp>
       <PopUp popUp={isPopUp} onClose={() => setPopUp(false)}>
         <div className='w-[90vh] h-[80vh] border border-red-500'>
-          <AddTask/>
+          <AddTask />
         </div>
       </PopUp >
     </div>

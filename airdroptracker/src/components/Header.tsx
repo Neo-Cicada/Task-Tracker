@@ -14,7 +14,7 @@ export default function Header() {
 
     return (
         <>
-            <div className='sticky top-0 z-50 hidden md:bg-gray-800 md:border-gray-600 md:flex md:items-center md:justify-around md:w-full md:h-16'>
+            <div className='sticky top-0 z-40 hidden md:bg-gray-800 md:border-gray-600 md:flex md:items-center md:justify-around md:w-full md:h-16'>
                 <Link className={`text-lg font-extrabold 
                     ${pathname === '/' ? 'text-white' : 'text-gray-300'}`}
                     href="/">

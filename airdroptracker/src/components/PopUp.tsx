@@ -37,10 +37,10 @@ const PopUp: React.FC<PopUpProps> = ({ popUp, onClose, children }) => {
 
   return (
     <div
-      className='fixed inset-0 flex items-center justify-center bg-black bg-opacity-50'
+      className='fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50'
       onClick={handleOutsideClick}
     >
-      <div className='flex flex-col p-6 bg-white rounded-md' onClick={handleInsideClick}>
+      <div className='flex flex-col p-6 bg-gray-700 rounded-md' onClick={handleInsideClick}>
         {children}
         {/* Add form or content for the pop-up here */}
         <div className='flex items-center justify-between'>
