@@ -7,8 +7,7 @@ import React from 'react'
 export default function Tasks() {
   const [isPopUp, setPopUp] = useState<boolean>(false);
   const [isInfo, setInfo] = useState<boolean>(false);
-  const [hoveredData, setHoveredData] = useState<any>("");
-
+  const [hoveredData, setHoveredData] = useState<any>(null);
   const dummyData = [
     {
       "id": 1,
@@ -35,9 +34,10 @@ export default function Tasks() {
   const ComponentData = dummyData.map((item) => (
     <div
       key={item.id}
-      onClick={() => setInfo(!isInfo)}
-      onMouseEnter={() => setHoveredData(item)}
-      onMouseLeave={() => setHoveredData(null)}
+      onClick={() => {
+        setHoveredData(item);
+        setInfo(!isInfo);
+      }}
       className="flex items-center justify-between h-16 border border-gray-600 rounded-md cursor-pointer"
     >
       <div>{item.name}</div>
@@ -45,7 +45,7 @@ export default function Tasks() {
       <div>{item.dateStarted}</div>
       <div>{item.dateEnded}</div>
     </div>
-  )); 
+  ));
   return (
     <div className='flex flex-col h-[90vh] p-9 gap-4'>
       <div className='flex justify-between '>
@@ -57,10 +57,11 @@ export default function Tasks() {
 
       {ComponentData}
       <PopUp popUp={isInfo} onClose={() => setInfo(false)}>
+        hello
         {hoveredData && hoveredData.name}
       </PopUp>
       <PopUp popUp={isPopUp} onClose={() => setPopUp(false)}>
-        <div className='w-[90vh] h-[80vh] border border-red-500'>
+        <div className='w-[90vh] h-[80vh]'>
           <AddTask />
         </div>
       </PopUp >
