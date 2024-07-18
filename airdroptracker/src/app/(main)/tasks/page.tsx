@@ -12,23 +12,29 @@ export default function Tasks() {
     {
       "id": 1,
       "name": "Alice",
+      "link": "www.facebook.com",
       "tasks": ["Task 1", "Task 2", "Task 3"],
-      "dateStarted": "2023-01-01T00:00:00.000Z",
-      "dateEnded": "2023-01-10T00:00:00.000Z"
+      "dateStarted": "2023",
+      "tge": "2023",
+      "note": "metamask wallet"
     },
     {
       "id": 2,
       "name": "Bob",
-      "tasks": ["Task 4", "Task 5"],
-      "dateStarted": "2023-01-02T00:00:00.000Z",
-      "dateEnded": "2023-01-11T00:00:00.000Z"
+      "link": "www.facebook.com",
+      "tasks": ["Task 1", "Task 2", "Task 3"],
+      "dateStarted": "2023",
+      "tge": "2023",
+      "note": "metamask wallet"
     },
     {
       "id": 3,
       "name": "Charlie",
-      "tasks": ["Task 6", "Task 7", "Task 8", "Task 9"],
-      "dateStarted": "2023-01-03T00:00:00.000Z",
-      "dateEnded": "2023-01-12T00:00:00.000Z"
+      "link": "www.facebook.com",
+      "tasks": ["Task 1", "Task 2", "Task 3"],
+      "dateStarted": "2023",
+      "tge": "2023",
+      "note": "metamask wallet"
     },
   ]
   const ComponentData = dummyData.map((item) => (
@@ -38,24 +44,23 @@ export default function Tasks() {
         setHoveredData(item);
         setInfo(!isInfo);
       }}
-      className="flex items-center justify-between h-16 border border-gray-600 rounded-md cursor-pointer"
+      className="flex items-center justify-around h-16 mx-24 border border-gray-600 rounded-md cursor-pointer"
     >
-      <div>{item.name}</div>
-      <div>task</div>
-      <div>{item.dateStarted}</div>
-      <div>{item.dateEnded}</div>
+      <div >{item.name}</div>
+      <div >{item.link}</div>
     </div>
   ));
   return (
     <div className='flex flex-col h-[90vh] p-9 gap-4'>
-      <div className='flex justify-between '>
+      <div className='flex justify-between mx-24'>
         <div >
           <p>Projects</p>
         </div>
         <button className='w-24 border border-gray-600 rounded-md' onClick={() => setPopUp(!isPopUp)}> Add task</button>
       </div>
-
-      {ComponentData}
+      <div className='flex flex-col gap-3 '>
+        {ComponentData}
+      </div>
       <PopUp popUp={isInfo} onClose={() => setInfo(false)}>
         hello
         {hoveredData && hoveredData.name}
