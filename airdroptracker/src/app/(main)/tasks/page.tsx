@@ -25,7 +25,7 @@ export default function Tasks() {
       "tasks": ["Task 1", "Task 2", "Task 3"],
       "dateStarted": "2023",
       "tge": "2023",
-      "note": "metamask wallet"
+      "note": "metamask wallet 2"
     },
     {
       "id": 3,
@@ -34,7 +34,7 @@ export default function Tasks() {
       "tasks": ["Task 1", "Task 2", "Task 3"],
       "dateStarted": "2023",
       "tge": "2023",
-      "note": "metamask wallet"
+      "note": "metamask wallet 3"
     },
   ]
   const ComponentData = dummyData.map((item) => (
@@ -62,8 +62,12 @@ export default function Tasks() {
         {ComponentData}
       </div>
       <PopUp popUp={isInfo} onClose={() => setInfo(false)}>
-        hello
-        {hoveredData && hoveredData.name}
+        <div className='w-[70vw] h-[80vh]'>
+          hello
+          {hoveredData && hoveredData.name}
+          <p>{hoveredData.note}</p>
+          {hoveredData.tasks.map((item: string) => <p key={item}>{item}</p>)}
+        </div>
       </PopUp>
       <PopUp popUp={isPopUp} onClose={() => setPopUp(false)}>
         <div className='w-[90vh] h-[80vh]'>
