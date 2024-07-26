@@ -63,13 +63,7 @@ export default function AddTask() {
                     Add Task
                 </button>
             </div>
-            <div className='flex flex-col'>
-                <label className="block mb-1 text-gray-700">Token Generation Event</label>
-                <input
-                    type="date"
-                    className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
-            </div>
+            
             <div className='flex flex-col'>
                 <label className="block mb-1 text-gray-700">Note</label>
                 <textarea
