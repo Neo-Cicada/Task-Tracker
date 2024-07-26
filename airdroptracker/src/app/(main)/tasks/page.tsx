@@ -62,11 +62,27 @@ export default function Tasks() {
         {ComponentData}
       </div>
       <PopUp popUp={isInfo} onClose={() => setInfo(false)}>
-        <div className='w-[70vw] h-[80vh]'>
-          hello
-          {hoveredData && hoveredData.name}
-          <p>{hoveredData.note}</p>
-          {hoveredData.tasks.map((item: string) => <p key={item}>{item}</p>)}
+        <div className='w-[70vw] h-[80vh] flex flex-col justify-start gap-10'>
+          <div className='flex justify-center items-center'>
+            <p className='text-3xl font-extrabold'>{hoveredData && hoveredData.name}</p>
+          </div>
+          <div>
+            <p className='text-center text-2xl font-bold'>Tasks</p>
+            {hoveredData && hoveredData.tasks.map((item: string) => (
+              <div className="flex items-center pt-4" key={item}>
+                <input
+                  type="checkbox"
+                  className="form-checkbox h-5 w-5 text-blue-600 cursor-pointer"
+                  readOnly
+                />
+                <p className="ml-2">{item}</p>
+              </div>
+            ))}          </div>
+          <div>
+            <p className='text-center text-2xl font-bold'>Notes</p>
+            <p>{hoveredData && hoveredData.note}</p>
+          </div>
+
         </div>
       </PopUp>
       <PopUp popUp={isPopUp} onClose={() => setPopUp(false)}>
