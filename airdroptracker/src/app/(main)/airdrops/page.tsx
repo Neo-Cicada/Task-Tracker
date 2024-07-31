@@ -1,8 +1,9 @@
-import React from 'react'
+'use client'
+import React, { useState } from 'react'
 import Image from 'next/image';
-
-export default function airdrops() {
-
+import PopUp from '@/components/PopUp';
+export default function Airdrops() {
+  const [isPopUp, setPopUp] = useState<boolean>(false);
   return (
     <div className='flex flex-col h-[90vh] p-9 gap-4'>
       {/* List of project,names, links, funding, steps, requirements, date started,  TGE */}
@@ -21,6 +22,7 @@ export default function airdrops() {
       <div className='flex flex-col gap-3 '>
         <div
           className="flex items-center justify-around h-16 mx-24 border border-gray-600 rounded-md cursor-pointer"
+          onClick={()=>setPopUp(!isPopUp)}
         >
           <div >name</div>
           <div >name</div>
@@ -38,7 +40,9 @@ export default function airdrops() {
           <div >name</div>
         </div>
       </div>
-
+      <PopUp popUp={isPopUp} onClose={() => setPopUp(false)}>
+        hello
+      </PopUp>
     </div>
   )
 }
