@@ -63,23 +63,23 @@ export default function Tasks() {
       </div>
       <PopUp popUp={isInfo} onClose={() => setInfo(false)}>
         <div className='w-[70vw] h-[80vh] flex flex-col justify-start gap-10'>
-          <div className='flex justify-center items-center'>
+          <div className='flex items-center justify-center'>
             <p className='text-3xl font-extrabold'>{hoveredData && hoveredData.name}</p>
           </div>
           <div>
-            <p className='text-center text-2xl font-bold'>Tasks</p>
+            <p className='text-2xl font-bold text-center'>Tasks</p>
             {hoveredData && hoveredData.tasks.map((item: string) => (
               <div className="flex items-center pt-4" key={item}>
                 <input
                   type="checkbox"
-                  className="form-checkbox h-5 w-5 text-blue-600 cursor-pointer"
+                  className="w-5 h-5 text-blue-600 cursor-pointer form-checkbox"
                   readOnly
                 />
                 <p className="ml-2">{item}</p>
               </div>
-            ))}          </div>
+            ))}          </div>\
           <div>
-            <p className='text-center text-2xl font-bold'>Notes</p>
+            <p className='text-2xl font-bold text-center'>Notes</p>
             <p>{hoveredData && hoveredData.note}</p>
           </div>
 
