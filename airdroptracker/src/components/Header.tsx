@@ -28,7 +28,7 @@ export default function Header() {
                     ${pathname === '/airdrops' ? 'text-white' : 'text-gray-300'}`}
                     href="airdrops">
                     Airdrops</Link>
-                <Link className="text-lg font-extrabold text-gray-300" aria-disabled href="#">Login</Link>
+                <Link className="text-lg font-extrabold text-gray-300" aria-disabled href="login">Login</Link>
             </div>
 
             <div className='border-b border-gray-200 h-[10vh] w-full flex md:hidden'>
