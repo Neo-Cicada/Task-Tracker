@@ -15,7 +15,7 @@ export default function Login() {
           />
         </div>
         <div className="w-full mb-6">
-          <label htmlFor="password" className="block text-sm font-medium text-gray-700">Password</label>
+          <label htmlFor="password" className="block text-sm font-medium text-black">Password</label>
           <input
             type="password"
             id="password"

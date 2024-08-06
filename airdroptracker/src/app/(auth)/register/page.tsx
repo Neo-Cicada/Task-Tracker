@@ -15,7 +15,7 @@ export default function Register() {
           />
         </div>
         <div className="w-full mb-4">
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
+          <label htmlFor="email" className="block text-sm font-medium text-black">Email</label>
           <input
             type="email"
             id="email"
@@ -23,7 +23,7 @@ export default function Register() {
           />
         </div>
         <div className="w-full mb-4">
-          <label htmlFor="password" className="block text-sm font-medium text-gray-700">Password</label>
+          <label htmlFor="password" className="block text-sm font-medium text-black">Password</label>
           <input
             type="password"
             id="password"
@@ -31,7 +31,7 @@ export default function Register() {
           />
         </div>
         <div className="w-full mb-6">
-          <label htmlFor="confirm-password" className="block text-sm font-medium text-gray-700">Confirm Password</label>
+          <label htmlFor="confirm-password" className="block text-sm font-medium text-black">Confirm Password</label>
           <input
             type="password"
             id="confirm-password"
